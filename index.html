@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZincShield · Stand strong this winter</title>
+<style>
+:root{--bg:#F6F3EC;--fg:#14261F;--mut:#5B6B65;--card:#FFFFFF;--line:#DDD8CB;--g:#12352F;--a:#E58A2B;--a2:#9A5410;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1B17;--fg:#EFEBDF;--mut:#9DB0A9;--card:#15271F;--line:#26403A;--g:#EFEBDF;--a2:#F0A25A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1B17;--fg:#EFEBDF;--mut:#9DB0A9;--card:#15271F;--line:#26403A;--g:#EFEBDF;--a2:#F0A25A;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:1.05}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px)}
+.brand{font:700 22px Georgia,serif;letter-spacing:.5px}.brand i{color:var(--a);font-style:normal}
+.nav{display:flex;gap:18px;align-items:center}
+button{font:inherit;cursor:pointer;border:0;color:inherit;background:none}
+.ghost{padding:8px 14px;border:1px solid var(--line);border-radius:99px;transition:.25s}.ghost:hover{border-color:var(--a);transform:translateY(-1px)}
+.btn{background:var(--g);color:var(--bg);padding:15px 30px;border-radius:99px;font-weight:600;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px -10px var(--g)}.btn:active{transform:scale(.97)}
+.btn.a{background:var(--a);color:#14261F}
+#cnt{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--a);color:#14261F;font-size:13px;font-weight:700;margin-left:6px}
+#cnt.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.5)}}
+.hero{min-height:88vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:4vw;padding:6vh 5vw}
+.tag{color:var(--a2);letter-spacing:4px;font-size:13px;font-weight:600}
+.hero h1{font-size:clamp(48px,8vw,120px);margin:14px 0 18px}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(60px) rotate(6deg);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p.l{font-size:19px;color:var(--mut);max-width:480px;margin-bottom:28px;opacity:0;animation:up .8s .7s forwards}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;opacity:0;animation:up .8s .9s forwards}
+.price{font:700 34px Georgia,serif}.price small{font:400 14px system-ui;color:var(--mut)}
+.stage{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.ring{position:absolute;border:1px dashed var(--line);border-radius:50%;inset:6%;animation:spin 40s linear infinite}
+.ring.r2{inset:20%;animation-duration:26s;animation-direction:reverse}
+.dot{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--a);top:-7px;left:50%}
+.ring.r2 .dot{background:var(--g)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.glow{position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 45%,transparent),transparent 70%);animation:breathe 5s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.25);opacity:.6}}
+.bottle{width:38%;position:relative;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 30px 30px rgba(0,0,0,.25))}
+@keyframes float{50%{transform:translateY(-22px) rotate(2deg)}}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;white-space:nowrap}
+.marq div{display:inline-block;animation:mq 28s linear infinite;font:italic 26px Georgia,serif;color:var(--mut)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:12vh 5vw}
+h2{font-size:clamp(34px,5vw,64px);max-width:760px;margin:10px 0 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-8px);border-color:var(--a)}
+.card h3{font-size:26px;margin-bottom:8px}.card p{color:var(--mut)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+.stat{display:flex;gap:6vw;align-items:center;flex-wrap:wrap;background:var(--g);color:var(--bg);border-radius:28px;padding:7vh 5vw}
+.stat b{font:700 clamp(80px,14vw,180px) Georgia,serif;color:var(--a);line-height:1}
+.stat p{max-width:440px;font-size:20px}.stat small{display:block;margin-top:10px;opacity:.75;font-size:13px}
+.buy{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
+.pic{background:var(--card);border:1px solid var(--line);border-radius:28px;aspect-ratio:1;display:grid;place-items:center}
+.pic svg{width:34%;animation:float 6s ease-in-out infinite}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px}
+.qty button{width:42px;height:42px;font-size:20px}.qty span{min-width:28px;text-align:center;font-weight:600}
+ul.chk{list-style:none;padding:0;margin:18px 0 26px;color:var(--mut)}ul.chk li::before{content:"✓ ";color:var(--a2);font-weight:700}
+.safe{font-size:13px;color:var(--mut);margin-top:22px;max-width:520px}
+footer{padding:6vh 5vw calc(6vh + 20px);color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+.ov{position:fixed;inset:0;background:rgba(10,20,16,.5);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.35s;z-index:20}.ov.on{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:21;transform:translateX(105%);transition:transform .5s cubic-bezier(.2,.8,.2,1);padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:16px;overflow-y:auto}.dr.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center}.dh h3{font-size:28px}
+.it{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);animation:up .5s}
+.sum div{display:flex;justify-content:space-between;padding:5px 0}.sum .t{font-weight:700;font-size:20px;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 5px}
+input,select,textarea{width:100%;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--a);box-shadow:0 0 0 3px color-mix(in srgb,var(--a) 25%,transparent)}
+.er{color:#C0392B;font-size:12px;min-height:16px}input.bad,textarea.bad{border-color:#C0392B}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay{display:flex;gap:10px;align-items:center;border:1px solid var(--a);border-radius:12px;padding:12px 14px;margin-top:6px}.pay input{width:auto}
+.ok{text-align:center;padding-top:6vh}.ok .ck{width:96px;height:96px;margin:0 auto 18px}.ok circle,.ok path{stroke:var(--a);stroke-width:5;fill:none;stroke-dasharray:300;stroke-dashoffset:300;animation:dr 1s .1s forwards}.ok path{animation-delay:.7s;stroke-dasharray:80;stroke-dashoffset:80}
+@keyframes dr{to{stroke-dashoffset:0}}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:30}
+@media(max-width:760px){.hero,.buy{grid-template-columns:1fr}.stage{order:-1;max-width:340px;margin:0 auto}.nav .ghost.h{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<header><div class="brand">Zinc<i>Shield</i></div><div class="nav"><button class="ghost h" id="th">◐ Theme</button><a class="ghost h" href="#buy" style="text-decoration:none;color:inherit">Shop</a><button class="ghost" id="oc">Cart<span id="cnt">0</span></button></div></header>
+
+<main>
+<div class="hero">
+<div>
+<p class="tag">ZINC SUPPLEMENT · MADE FOR ISLAMABAD</p>
+<h1 id="h1">Stand strong this winter.</h1>
+<p class="l">One small daily habit for the people you care about. Honest dose, clear label, pharmacist-friendly.</p>
+<div class="row"><button class="btn a" id="hb">Add to cart</button><div class="price">Rs 800 <small>/ 30 capsules</small></div></div>
+</div>
+<div class="stage"><div class="glow"></div><div class="ring"><div class="dot"></div></div><div class="ring r2"><div class="dot"></div></div>
+<svg class="bottle" viewBox="0 0 120 220" aria-label="ZincShield bottle"><rect x="30" y="4" width="60" height="30" rx="8" fill="#E58A2B"/><rect x="20" y="30" width="80" height="186" rx="22" fill="#12352F"/><rect x="30" y="80" width="60" height="96" rx="10" fill="#F6F3EC"/><text x="60" y="120" font-family="Georgia" font-weight="700" font-size="15" text-anchor="middle" fill="#12352F">Zinc</text><text x="60" y="140" font-family="Georgia" font-weight="700" font-size="15" text-anchor="middle" fill="#E58A2B">Shield</text><text x="60" y="162" font-family="Arial" font-size="9" text-anchor="middle" fill="#12352F">30 capsules</text></svg></div>
+</div>
+<div class="marq"><div>Small mineral. Strong foundations. · Right nutrient, right moment. · Stand strong, Islamabad. · Small mineral. Strong foundations. · Right nutrient, right moment. · Stand strong, Islamabad. ·&nbsp;</div></div>
+
+<section><p class="tag rv">WHY ZINC</p><h2 class="rv">Your body needs it every single day.</h2>
+<div class="grid">
+<div class="card rv"><h3>Immune support</h3><p>Zinc helps immune cells grow and work properly.</p></div>
+<div class="card rv"><h3>Growth and repair</h3><p>It helps the body make new cells and repair damaged ones.</p></div>
+<div class="card rv"><h3>Right on time</h3><p>Zinc syrup or lozenges taken within 24 hours of first cold symptoms may shorten a cold.</p></div>
+</div></section>
+
+<section style="padding-top:0"><div class="stat rv"><b><span id="n">0</span>%</b><p>of women of reproductive age in Pakistan were zinc deficient in the 2018 National Nutrition Survey, and 18.6% of children under 5.<small>Source: National Nutrition Survey 2018, Govt. of Pakistan / UNICEF</small></p></div></section>
+
+<section id="buy"><div class="buy">
+<div class="pic rv"><svg viewBox="0 0 120 220"><rect x="30" y="4" width="60" height="30" rx="8" fill="#E58A2B"/><rect x="20" y="30" width="80" height="186" rx="22" fill="#12352F"/><rect x="30" y="80" width="60" height="96" rx="10" fill="#F6F3EC"/><text x="60" y="124" font-family="Georgia" font-weight="700" font-size="15" text-anchor="middle" fill="#12352F">Zinc</text><text x="60" y="144" font-family="Georgia" font-weight="700" font-size="15" text-anchor="middle" fill="#E58A2B">Shield</text></svg></div>
+<div class="rv"><p class="tag">DAILY ZINC SUPPLEMENT</p><h2 style="margin-bottom:12px">ZincShield</h2>
+<div class="price" style="margin-bottom:6px">Rs 800 <small>+ Rs 150 delivery</small></div>
+<ul class="chk"><li>30 capsules, one a day</li><li>Dose within the 40 mg daily limit</li><li>Cash on delivery across Pakistan</li></ul>
+<div class="row" style="opacity:1;animation:none"><div class="qty"><button id="mn" aria-label="Less">−</button><span id="q">1</span><button id="pl" aria-label="More">+</button></div><button class="btn" id="ad">Add to cart</button></div>
+<p class="safe">Dietary supplement, not a medicine or a cure. Keep total zinc under 40 mg a day from all sources and ask your doctor or pharmacist, especially for children, pregnancy or long-term use.</p></div>
+</div></section>
+</main>
+<footer>© ZincShield · A student project for English-B Communication Skills, Iqra University. Demo store: no real orders or payments are processed.</footer>
+
+<div class="ov" id="ov"></div>
+<aside class="dr" id="cd" aria-label="Cart"><div class="dh"><h3>Your cart</h3><button class="ghost" id="cc">Close</button></div><div id="ci"></div><div class="sum" id="cs"></div><button class="btn a" id="co">Checkout</button></aside>
+<aside class="dr" id="ck" aria-label="Checkout" style="width:min(520px,100%)"><div class="dh"><h3 id="ckt">Delivery details</h3><button class="ghost" id="kc">Close</button></div><div id="kb"></div></aside>
+<canvas id="cf"></canvas>
+
+<script>
+(function(){
+var P=800,S=150,cart=0,qty=1,$=function(i){return document.getElementById(i)},R=function(n){return"Rs "+n.toLocaleString("en-PK")};
+// headline letters
+var h=$("h1"),w=h.textContent.split(" ");h.innerHTML=w.map(function(x,i){return'<span style="animation-delay:'+(i*.12+.15)+'s">'+x+"</span>"}).join(" ");
+// theme
+$("th").onclick=function(){var d=document.documentElement,c=d.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");d.setAttribute("data-theme",c==="dark"?"light":"dark")};
+// reveal + counter
+var done=0,io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");if(e.target.classList.contains("stat")&&!done){done=1;var t=0,n=$("n"),iv=setInterval(function(){t+=1;n.textContent=t;if(t>=22){n.textContent="22";clearInterval(iv)}},60)}}})},{threshold:.2});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+// qty
+$("pl").onclick=function(){qty=Math.min(5,qty+1);$("q").textContent=qty};$("mn").onclick=function(){qty=Math.max(1,qty-1);$("q").textContent=qty};
+function open(el){$("ov").classList.add("on");el.classList.add("on")}
+function shut(){$("ov").classList.remove("on");$("cd").classList.remove("on");$("ck").classList.remove("on")}
+$("ov").onclick=shut;$("cc").onclick=shut;$("kc").onclick=shut;
+function bump(){$("cnt").textContent=cart;$("cnt").classList.remove("pop");void $("cnt").offsetWidth;$("cnt").classList.add("pop")}
+function add(n){cart=Math.min(10,cart+n);bump();draw();open($("cd"))}
+$("hb").onclick=function(){add(1)};$("ad").onclick=function(){add(qty)};$("oc").onclick=function(){draw();open($("cd"))};
+function draw(){
+ if(!cart){$("ci").innerHTML='<p style="color:var(--mut);padding:30px 0">Your cart is empty.</p>';$("cs").innerHTML="";$("co").style.display="none";return}
+ $("co").style.display="";
+ $("ci").innerHTML='<div class="it"><div><b>ZincShield</b><br><small style="color:var(--mut)">30 capsules · '+R(P)+'</small></div><div class="qty"><button id="m2">−</button><span>'+cart+'</span><button id="p2">+</button></div></div>';
+ $("m2").onclick=function(){cart--;bump();draw()};$("p2").onclick=function(){cart=Math.min(10,cart+1);bump();draw()};
+ $("cs").innerHTML='<div><span>Subtotal</span><span>'+R(P*cart)+'</span></div><div><span>Shipping</span><span>'+R(S)+'</span></div><div class="t"><span>Total</span><span>'+R(P*cart+S)+'</span></div>';
+}
+$("co").onclick=function(){$("cd").classList.remove("on");form();$("ck").classList.add("on")};
+var D={};
+function form(){
+ $("ckt").textContent="Delivery details";
+ $("kb").innerHTML='<form id="f" novalidate><label>Full name</label><input id="nm" autocomplete="name" placeholder="Ayesha Khan"><div class="er" id="e_nm"></div>'+
+ '<div class="two"><div><label>Mobile number</label><input id="ph" type="tel" autocomplete="tel" placeholder="03XX-XXXXXXX"><div class="er" id="e_ph"></div></div><div><label>Email (optional)</label><input id="em" type="email" placeholder="you@email.com"></div></div>'+
+ '<label>Street address</label><textarea id="ad2" rows="2" placeholder="House, street, sector"></textarea><div class="er" id="e_ad2"></div>'+
+ '<div class="two"><div><label>City</label><select id="ct"><option>Islamabad</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option><option>Peshawar</option><option>Other</option></select></div><div><label>Postal code</label><input id="pc" inputmode="numeric" placeholder="44000"></div></div>'+
+ '<label>Delivery notes (optional)</label><input id="nt" placeholder="Call on arrival"><label>Payment</label><div class="pay"><input type="radio" checked> Cash on delivery</div>'+
+ '<div class="sum" style="margin:20px 0"><div><span>Subtotal ('+cart+')</span><span>'+R(P*cart)+'</span></div><div><span>Shipping</span><span>'+R(S)+'</span></div><div class="t"><span>Total</span><span>'+R(P*cart+S)+'</span></div></div>'+
+ '<button class="btn a" style="width:100%" type="submit">Review order</button></form>';
+ var f=$("f");if(D.nm)["nm","ph","em","ad2","pc","nt"].forEach(function(k){$(k).value=D[k]||""});
+ f.onsubmit=function(e){e.preventDefault();var ok=true;function chk(id,t,m){var v=$(id).value.trim(),b=!t(v);$(id).classList.toggle("bad",b);$("e_"+id).textContent=b?m:"";if(b)ok=false}
+  chk("nm",function(v){return v.length>2},"Please enter your full name");
+  chk("ph",function(v){return/^(03\d{2}-?\d{7}|\+923\d{9})$/.test(v.replace(/\s/g,""))},"Enter a valid mobile, e.g. 0300-1234567");
+  chk("ad2",function(v){return v.length>8},"Please enter your full address");
+  if(!ok)return;["nm","ph","em","ad2","pc","nt"].forEach(function(k){D[k]=$(k).value.trim()});D.ct=$("ct").value;review()}
+}
+function review(){
+ $("ckt").textContent="Confirm your order";
+ $("kb").innerHTML='<div class="card" style="margin-top:14px;padding:22px"><p><b>'+esc(D.nm)+'</b><br>'+esc(D.ph)+'<br>'+esc(D.ad2)+', '+esc(D.ct)+(D.pc?" "+esc(D.pc):"")+'</p>'+(D.nt?'<p style="color:var(--mut);margin-top:8px">Note: '+esc(D.nt)+'</p>':"")+'</div>'+
+ '<div class="sum" style="margin:20px 0"><div><span>ZincShield × '+cart+'</span><span>'+R(P*cart)+'</span></div><div><span>Shipping</span><span>'+R(S)+'</span></div><div class="t"><span>Total, pay on delivery</span><span>'+R(P*cart+S)+'</span></div></div>'+
+ '<button class="btn a" style="width:100%" id="pl2">Confirm order</button><button class="ghost" style="width:100%;margin-top:10px" id="bk">Edit details</button>';
+ $("bk").onclick=form;$("pl2").onclick=place;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function place(){
+ var id="ZS-"+Math.random().toString(36).slice(2,8).toUpperCase(),tot=P*cart+S,first=D.nm.split(" ")[0];
+ $("ckt").textContent="Order placed";
+ $("kb").innerHTML='<div class="ok"><svg class="ck" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/><path d="M28 52l16 16 30-34"/></svg><h2 style="margin:0 auto 10px;font-size:34px">Thank you, '+esc(first)+'.</h2><p style="color:var(--mut)">Order <b style="color:var(--fg)">'+id+'</b> is confirmed.<br>Pay '+R(tot)+' in cash on delivery to '+esc(D.ct)+'.</p><p class="safe" style="margin:18px auto">Demo store: this order is not sent anywhere.</p><button class="btn" id="dn">Continue shopping</button></div>';
+ $("dn").onclick=function(){shut();cart=0;bump();draw()};boom();
+}
+function boom(){var c=$("cf"),x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;var cl=["#E58A2B","#12352F","#F0A25A","#9DB0A9"],p=[];
+ for(var i=0;i<140;i++)p.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*16,vy:Math.random()*-16-4,s:Math.random()*8+4,c:cl[i%4],r:Math.random()*6});
+ var t=0;(function f(){x.clearRect(0,0,c.width,c.height);p.forEach(function(q){q.x+=q.vx;q.y+=q.vy;q.vy+=.4;q.r+=.2;x.save();x.translate(q.x,q.y);x.rotate(q.r);x.fillStyle=q.c;x.fillRect(-q.s/2,-q.s/2,q.s,q.s*.6);x.restore()});if(++t<110)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
+draw();
+})();
+</script>
+</body>
+</html>
